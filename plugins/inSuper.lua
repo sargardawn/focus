@@ -106,13 +106,13 @@ end
 local function callback_info(cb_extra, success, result)
 local title ="Info for SuperGroup ☞["..result.title.."]\n\n"
 local admin_num = "Admin count☞"..result.admins_count.."\n"
-local user_num = "User count > "..result.participants_count.."\n"
-local kicked_num = "Kicked user count > "..result.kicked_count.."\n"
-local channel_id = "ID > "..result.peer_id.."\n"
+local user_num = "User count ☞ "..result.participants_count.."\n"
+local kicked_num = "Kicked user count ☞ "..result.kicked_count.."\n"
+local channel_id = "ID ☞ "..result.peer_id.."\n"
 if result.username then
-	channel_username = "Username > @"..result.username
+	channel_username = "Username ☞@"..result.username
 else
-	channel_username = ""
+	channel_username = "@Teleirans"
 end
 local text = title..admin_num..user_num..kicked_num..channel_id..channel_username
     send_large_msg(cb_extra.receiver, text)
@@ -555,7 +555,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "SuperGroup settings:\n\nLock Links > "..settings.lock_link.."\nLock Flood > "..settings.flood.."\nFlood sensitivity > "..NUM_MSG_MAX.."\nLock Spam > "..settings.lock_spam.."\nLock Arabic/Persian > "..settings.lock_arabic.."\nLock Member > "..settings.lock_member.."\nLock RTL > "..settings.lock_rtl.."\nLock TGservice > "..settings.lock_tgservice.."\nLock Sticker > "..settings.lock_sticker.."\nPublic > "..settings.public.."\nStrict Settings > "..settings.strict
+  local text = "SuperGroup settings:\n\nLock Links ☞ "..settings.lock_link.."\nLock Flood ☞ "..settings.flood.."\nFlood sensitivity ☞ "..NUM_MSG_MAX.."\nLock Spam☞"..settings.lock_spam.."\nLock Arabic/Persian  ☞ "..settings.lock_arabic.."\nLock Member ☞ "..settings.lock_member.."\nLock RTL ☞ "..settings.lock_rtl.."\nLock TGservice ☞ "..settings.lock_tgservice.."\nLock Sticker ☞"..settings.lock_sticker.."\nPublic ☞ "..settings.public.."\nStrict Settings ☞ "..settings.strict
   return text
 end
 
@@ -1949,7 +1949,7 @@ local function run(msg, matches)
 		end
 
 		if matches[1] == 'help' and not is_owner(msg) then
-			text = "Message /superhelp to @BlackPlus in private for SuperGroup help."
+			text = "Message /superhelp to @TeleSeed_Plus in private for SuperGroup help."
 			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_owner(msg) then
 			local name_log = user_print_name(msg.from)
@@ -2082,4 +2082,3 @@ return {
   pre_process = pre_process
 }
 --End supergrpup.lua
---By @MehdiHS
