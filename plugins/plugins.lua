@@ -42,7 +42,7 @@ local function list_all_plugins(only_enabled)
       text = text..nsum..'. '..v..'  '..status..'\n'
     end
   end
-  local text = text..'\nBot Version > 6.7'
+  local text = text..'\n Channel: @Team_Focus'
   return text
 end
 
@@ -219,4 +219,4 @@ return {
 }
 
 end
---Edited By @MehdiHS
+
