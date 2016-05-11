@@ -1258,7 +1258,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "ایدی گروه: "..msg.to.id.."\nایدی:"..msg.from.id.."\n یوزرنیم: @"..(msg.from.username or '').."			end
+				return "Id supergp:"..msg.to.id.."		end
 		end
 
 		if matches[1] == 'kickme' then
