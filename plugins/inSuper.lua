@@ -63,7 +63,7 @@ local function check_member_superrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-	  local text = '☞SuperGroup has been removed☜'
+	  local text = '☞گپ از لیست حذف شد☜'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -104,15 +104,15 @@ end
 
 --Get and output info about supergroup
 local function callback_info(cb_extra, success, result)
-local title ="Info for SuperGroup ☞ ["..result.title.."]\n\n"
-local admin_num = "Admin count ☞ "..result.admins_count.."\n"
-local user_num = "User count ☞ "..result.participants_count.."\n"
-local kicked_num = "Kicked user count ☞ "..result.kicked_count.."\n"
-local channel_id = "ID ☞ "..result.peer_id.."\n"
+local title =" اطلاعات سوپرگروه:☞ ["..result.title.."]\n\n"
+local admin_num = "ℹAdmin count ☞ "..result.admins_count.."\n"
+local user_num = "ℹUser count ☞ "..result.participants_count.."\n"
+local kicked_num = "ℹKicked user count ☞ "..result.kicked_count.."\n"
+local channel_id = "ℹID ☞ "..result.peer_id.."\n"
 if result.username then
-	channel_username = "Username ☞ @"..result.username
+	channel_username = "ℹUsername ☞ @"..result.username
 else
-	channel_username = "@TeleIrans"
+	channel_username = "@Team_Focus"
 end
 local text = title..admin_num..user_num..kicked_num..channel_id..channel_username
     send_large_msg(cb_extra.receiver, text)
@@ -179,11 +179,11 @@ local function lock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'yes' then
-    return '*Link posting is already locked'
+    return 'ℹلینک قفل شد🔒'
   else
     data[tostring(target)]['settings']['lock_link'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Link posting has been locked'
+    return 'ℹلینک قفل شد🔒'
   end
 end
 
@@ -193,11 +193,11 @@ local function unlock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'no' then
-    return '*Link posting is not locked'
+    return 'ℹلینک قفل شد🔒'
   else
     data[tostring(target)]['settings']['lock_link'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Link posting has been unlocked'
+    return 'ℹلینک ازاد شد🔓'
   end
 end
 
